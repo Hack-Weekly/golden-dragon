@@ -1,7 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Cinzel+Decorative);
+
+body {
+  font-family: "Cinzel Decorative", "Times New Roman", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-image: url(images/cavebackground.jpg);
+  background-size: cover;
+  color: gold;
+}
+
+.header {
+  width: 100%;
+  background-color: black;
+
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: auto;
+  height: 80px;
+}
+
+.shimmer {
+  color: gold;
+  -webkit-mask:linear-gradient(-60deg,#ffffff 30%,rgba(255, 255, 255, 0.333),#ffffff 70%) right/300% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 2.5s infinite;
+  font-size: 30px;
+}
+
+ @keyframes shimmer {
+ 100% {-webkit-mask-position:left}
+}
+
 button {
   cursor: pointer;
   background: none;
   border: none;
   text-align: center;
   vertical-align: middle;
+}
+
+.todo-container {
+  background-color: rgba( 0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+#goldpile {
+  width: auto;
+  height: 100px;
+  flex: 1 1 auto;
 }
