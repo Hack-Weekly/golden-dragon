@@ -1,3 +1,4 @@
+// Script to add todo items and clear input value after //
 let addToDoBtn = document.getElementById('todo-add');
 let taskList = document.getElementById('tasks');
 let inputToDo = document.getElementById('todo-input');
@@ -8,4 +9,4 @@ addToDoBtn.addEventListener('click', function(){
     taskList.appendChild(paragraph);
     inputToDo.value = "";
 });
-// Script to add todo items and clear input value after //
+
