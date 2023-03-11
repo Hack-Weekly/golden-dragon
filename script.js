@@ -1,7 +1,7 @@
 // Script to add todo items and clear input value after //
-let addToDoBtn = document.getElementById('todo-add');
-let todoList = document.getElementById('todoItems');
-let inputToDo = document.getElementById('todo-input');
+let addToDoBtn = document.getElementById("todo-add");
+let todoList = document.getElementById("todoItems");
+let inputToDo = document.getElementById("todo-input");
 
 function addDoneButton() {
   const newButton = document.createElement('button')
