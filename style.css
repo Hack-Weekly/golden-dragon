@@ -43,14 +43,19 @@ button {
   border: none;
   text-align: center;
   vertical-align: middle;
-  background-color: white;
 }
 
 .todo-container {
-  background-color: rgba( 0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#todo-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .footer {
@@ -69,4 +74,44 @@ button {
 ul {
   list-style: none;
   text-align: center;
+}
+
+#todo-input{
+  height: 48px;
+  width: 320px;
+  border-radius: 10px;
+  border: none;
+  padding: 0 15px;
+  font-size: 16px;
+  outline: 2px solid gold;
+  background-color: rgba(34, 34, 34, 0.3);
+  color: #fff;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+#todo-input::placeholder{
+  color: #e6e6e6;
+}
+
+#todo-input:focus{
+  outline: 2px solid gold;
+  box-shadow: 0 0 7px gold;
+}
+
+#seal{
+  background-color: transparent;
+  width: 80px;
+  height: auto;
+}
+
+#todoItems{
+  position: relative;
+  z-index: 1;
+  background-color: #202020;
+  width: 400px;
+  min-height: 300px;
+  border-radius: 14px;
+  padding: 20px;
 }
