@@ -43,7 +43,8 @@ button {
   border: none;
   text-align: center;
   vertical-align: middle;
-  background-color: white;
+  color:white;
+  margin: 0 1rem;
 }
 
 .todo-container {
@@ -58,6 +59,12 @@ button {
   bottom: 0;
   width: 100%;
   display: flex;
+}
+
+.todoDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
 #goldpile {
