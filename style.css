@@ -65,3 +65,8 @@ button {
   height: 100px;
   flex: 1 1 auto;
 }
+
+ul {
+  list-style: none;
+  text-align: center;
+}
