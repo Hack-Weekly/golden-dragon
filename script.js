@@ -5,7 +5,8 @@ let inputToDo = document.getElementById("todo-input");
 
 function addDoneButton() {
   const newButton = document.createElement('button')
-  newButton.innerHTML = 'DONE'
+  newButton.innerText = 'DONE'
+  newButton.style.color = "#fff"
   newButton.addEventListener('click', (event) => {
     event.target.previousElementSibling.style.textDecorationLine = 'line-through'
     event.target.remove()
