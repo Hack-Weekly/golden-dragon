@@ -65,6 +65,12 @@ button {
   display: flex;
 }
 
+.todoDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
 #goldpile {
   width: auto;
   height: 100px;
