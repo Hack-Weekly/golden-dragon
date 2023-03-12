@@ -1,30 +1,50 @@
 // Script to add todo items and clear input value after //
-let addToDoBtn = document.getElementById("todo-add");
-let todoList = document.getElementById("todoItems");
-let inputToDo = document.getElementById("todo-input");
+let addToDoBtn = document.getElementById('todo-add');
+let todoList = document.getElementById('todoItems');
+let inputToDo = document.getElementById('todo-input');
 
 function addDoneButton() {
-  const newButton = document.createElement('button')
-  newButton.innerHTML = 'DONE'
+  const newButton = document.createElement('button');
+  newButton.innerHTML = 'DONE';
   newButton.addEventListener('click', (event) => {
-    event.target.previousElementSibling.style.textDecorationLine = 'line-through'
-    event.target.remove()
-  })
-  return newButton
+    event.target.previousElementSibling.style.textDecorationLine =
+      'line-through';
+    event.target.remove();
+  });
+  return newButton;
 }
 
-addToDoBtn.addEventListener('click', function() {
-  const outDiv = document.createElement('div')
-  outDiv.classList.add('todoDiv')
-  const paragraph = document.createElement('p')
-  const newButton = addDoneButton()
-  paragraph.innerText = inputToDo.value;
-  outDiv.appendChild(paragraph)
-  outDiv.appendChild(newButton)
-  todoList.appendChild(outDiv);
-  inputToDo.value = "";
+addToDoBtn.addEventListener('click', function () {
+  const todoItem = document.createElement('li');
+  const todoText = document.createElement('p');
+  const doneBtn = addDoneButton();
+
+  if (inputToDo.value !== '') {
+    todoText.innerText = inputToDo.value;
+    todoItem.classList.add('todoDiv');
+    todoItem.appendChild(todoText);
+    todoItem.appendChild(doneBtn);
+    todoDelete(todoItem);
+    todoList.appendChild(todoItem);
+
+    inputToDo.value = '';
+  }
 });
 
+function todoDelete(todo) {
+  const deleteTodoBtn = document.createElement('button');
+
+  deleteTodoBtn.innerHTML = `
+    <iconify-icon
+      icon="bi:trash"
+      style="color: white;"
+    ></iconify-icon>`;
+
+  deleteTodoBtn.addEventListener('click', () => todo.remove());
+
+  todo.appendChild(deleteTodoBtn);
+}
+
 inputToDo.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') addToDoBtn.click()
-})
+  if (event.key === 'Enter') addToDoBtn.click();
+});
