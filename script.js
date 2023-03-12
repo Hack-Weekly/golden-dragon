@@ -15,13 +15,15 @@ function addDoneButton() {
 }
 
 addToDoBtn.addEventListener('click', function () {
-  const todoItem = document.createElement('li');
-  const todoText = document.createElement('p');
-  const doneBtn = addDoneButton();
-
   if (inputToDo.value !== '') {
+    const todoItem = document.createElement('li');
+    const todoText = document.createElement('p');
+    const doneBtn = addDoneButton();
+
     todoText.innerText = inputToDo.value;
+    
     todoItem.classList.add('todoDiv');
+
     todoItem.appendChild(todoText);
     todoItem.appendChild(doneBtn);
     todoDelete(todoItem);
