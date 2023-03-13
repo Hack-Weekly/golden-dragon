@@ -119,7 +119,7 @@ ul {
 #todoItems{
   position: relative;
   z-index: 1;
-  /* width: 400px; */
+  width: 400px;
   min-height: 300px;
   padding: 20px;
   word-break: break-word;
