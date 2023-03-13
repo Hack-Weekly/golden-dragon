@@ -5,9 +5,8 @@ let inputToDo = document.getElementById('todo-input');
 function addDoneTodo(todo) {
   const doneBtn = document.createElement('button');
   doneBtn.innerText = 'DONE';
-  doneBtn.addEventListener('click', (event) => {
-    todo.style.textDecorationLine = 'line-through';
-    event.target.remove();
+  doneBtn.addEventListener('click', () => {
+    todo.querySelector('p').classList.toggle('complete');
   });
   return doneBtn;
 }

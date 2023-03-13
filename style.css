@@ -137,3 +137,8 @@ ul {
 .todo-text {
   width: 100%;
 }
+
+.complete {
+  text-decoration: line-through;
+  color: rgba(255, 217, 0, 0.50);
+}
