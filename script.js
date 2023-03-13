@@ -8,7 +8,7 @@ let itemsCount = 0
 
 function addDoneTodo(todo) {
   const doneBtn = document.createElement('button');
-  doneBtn.innerText = 'DONE';
+  doneBtn.innerText = '✓';
   doneBtn.addEventListener('click', () => {
     todo.querySelector('p').classList.toggle('complete');
   });
@@ -16,11 +16,14 @@ function addDoneTodo(todo) {
 }
 
 function addDeleteTodo(todo) {
-  const iconDelete = document.createElement('iconify-icon')
-  iconDelete.setAttribute('icon', 'bi:trash')
+  const deleteBtn = document.createElement('button');
+  const iconDelete = document.createElement('iconify-icon');
+  iconDelete.setAttribute('icon', 'bi:trash');
+  deleteBtn.appendChild(iconDelete);
 
   iconDelete.addEventListener('click', () => todo.remove());
-  return iconDelete
+
+  return deleteBtn;
 }
 
 function buttonsDiv(todo) {
