@@ -1,6 +1,10 @@
 let addToDoBtn = document.getElementById('todo-add');
 let todoList = document.getElementById('todoItems');
 let inputToDo = document.getElementById('todo-input');
+let toDoForm = document.getElementById("todo-form");
+let toDoContainer = document.getElementById("todo-container");
+const resetButton = document.createElement('button')
+let itemsCount = 0
 
 function addDoneTodo(todo) {
   const doneBtn = document.createElement('button');
@@ -31,6 +35,23 @@ function buttonsDiv(todo) {
   return butnsDiv
 }
 
+function resetOnClick () {
+  todoList = document.getElementById("todoItems")
+  const childerElement = todoList.childNodes
+  while (childerElement.length >0) {
+    todoList.removeChild(childerElement[0])
+  }
+  resetButton.remove()
+  itemsCount = 0
+}
+
+function addResetButton () {
+  resetButton.setAttribute('id', 'reset-button')
+  resetButton.setAttribute('onclick', 'resetOnClick()')
+  resetButton.innerText = "Reset"
+  toDoForm.appendChild(resetButton)
+}
+
 addToDoBtn.addEventListener('click', function() {
   if (inputToDo.value !== '') {
     const todoItem = document.createElement('li');
@@ -46,6 +67,11 @@ addToDoBtn.addEventListener('click', function() {
     todoList.appendChild(todoItem)
 
     inputToDo.value = '';
+    
+    if (itemsCount === 0) {
+      addResetButton()
+    }
+    itemsCount += 1
   }
 });
 

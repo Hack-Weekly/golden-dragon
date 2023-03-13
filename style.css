@@ -142,3 +142,8 @@ ul {
   text-decoration: line-through;
   color: rgba(255, 217, 0, 0.50);
 }
+
+#reset-button {
+  color: white;
+  font-size: larger;
+}
